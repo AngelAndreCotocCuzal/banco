@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="imagenes">
+    <file>fondo_proyecto.png</file>
+    <file>cerrar.png</file>
+  </qresource>
+</RCC>
