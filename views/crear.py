@@ -1,3 +1,4 @@
+from PyQt5.QtWidgets import *
 from PyQt5 import QtCore, QtGui, QtWidgets
 from random import randint
 from eliminar import Ui_Eliminar
@@ -9,7 +10,7 @@ import sys
 class Ui_Crear_Window(object):
     def setupUi(self, Crear_Window):
         Crear_Window.setObjectName("Crear_Window")
-        Crear_Window.resize(947, 693)
+        Crear_Window.resize(1060, 822)
         Crear_Window.setWindowFlags(QtCore.Qt.FramelessWindowHint)
         Crear_Window.setAttribute(QtCore.Qt.WA_TranslucentBackground)
         self.centralwidget = QtWidgets.QWidget(Crear_Window)
@@ -26,6 +27,7 @@ class Ui_Crear_Window(object):
         self.txt_phone.setObjectName("txt_phone")
         self.txt_dpi = QtWidgets.QLineEdit(self.centralwidget)
         self.txt_dpi.setGeometry(QtCore.QRect(282, 174, 137, 24))
+        self.txt_dpi.setLayoutDirection(QtCore.Qt.LeftToRight)
         self.txt_dpi.setObjectName("txt_dpi")
         self.eleccion = QtWidgets.QComboBox(self.centralwidget)
         self.eleccion.setGeometry(QtCore.QRect(662, 105, 128, 22))
@@ -103,7 +105,7 @@ class Ui_Crear_Window(object):
         self.lbl_ref.setFont(font)
         self.lbl_ref.setObjectName("lbl_ref")
         self.btn_crear = QtWidgets.QPushButton(self.centralwidget)
-        self.btn_crear.setGeometry(QtCore.QRect(310, 230, 151, 51))
+        self.btn_crear.setGeometry(QtCore.QRect(280, 230, 151, 51))
         self.btn_crear.setObjectName("btn_crear")
         self.tableWidget = QtWidgets.QTableWidget(self.centralwidget)
         self.tableWidget.setGeometry(QtCore.QRect(160, 320, 621, 291))
@@ -111,13 +113,13 @@ class Ui_Crear_Window(object):
         self.tableWidget.setColumnCount(0)
         self.tableWidget.setRowCount(0)
         self.btn_editar = QtWidgets.QPushButton(self.centralwidget)
-        self.btn_editar.setGeometry(QtCore.QRect(470, 230, 151, 51))
+        self.btn_editar.setGeometry(QtCore.QRect(550, 230, 151, 51))
         self.btn_editar.setObjectName("btn_editar")
         self.btn_actua = QtWidgets.QPushButton(self.centralwidget)
-        self.btn_actua.setGeometry(QtCore.QRect(150, 230, 151, 51))
+        self.btn_actua.setGeometry(QtCore.QRect(40, 230, 151, 51))
         self.btn_actua.setObjectName("btn_actua")
         self.btn_crear_4 = QtWidgets.QPushButton(self.centralwidget)
-        self.btn_crear_4.setGeometry(QtCore.QRect(630, 230, 151, 51))
+        self.btn_crear_4.setGeometry(QtCore.QRect(800, 230, 151, 51))
         self.btn_crear_4.setObjectName("btn_crear_4")
         self.label = QtWidgets.QLabel(self.centralwidget)
         self.label.setGeometry(QtCore.QRect(-20, -140, 1031, 921))
@@ -137,6 +139,9 @@ class Ui_Crear_Window(object):
         self.btn_cerrar.setStyleSheet("image: url(:/imagenes/cerrar.png);")
         self.btn_cerrar.setText("")
         self.btn_cerrar.setObjectName("btn_cerrar")
+        self.lnx_celda_eliminar = QtWidgets.QLineEdit(self.centralwidget)
+        self.lnx_celda_eliminar.setGeometry(QtCore.QRect(800, 290, 151, 41))
+        self.lnx_celda_eliminar.setObjectName("lnx_celda_eliminar")
         self.label.raise_()
         self.txt_name.raise_()
         self.txt_dic.raise_()
@@ -158,6 +163,7 @@ class Ui_Crear_Window(object):
         self.btn_actua.raise_()
         self.btn_crear_4.raise_()
         self.btn_cerrar.raise_()
+        self.lnx_celda_eliminar.raise_()
         Crear_Window.setCentralWidget(self.centralwidget)
         self.statusbar = QtWidgets.QStatusBar(Crear_Window)
         self.statusbar.setObjectName("statusbar")
@@ -169,7 +175,7 @@ class Ui_Crear_Window(object):
         self.btn_actua.clicked.connect(self.actualizar)
         self.btn_crear_4.clicked.connect(self.eliminar)
         self.btn_cerrar.clicked.connect(self.cerrar)
-        self.btn_editar.clicked.connect(self.abrir)
+        # self.btn_editar.clicked.connect(self.abrir)
 
     def retranslateUi(self, Crear_Window):
         _translate = QtCore.QCoreApplication.translate
@@ -185,24 +191,25 @@ class Ui_Crear_Window(object):
         self.eleccion.setItemText(4, _translate("Crear_Window", "Estado de cuenta"))
         self.txt_nit.setPlaceholderText(_translate("Crear_Window", "Nit"))
         self.txt_ref.setPlaceholderText(_translate("Crear_Window", "Referencia"))
-        self.lbl_name.setText(_translate("Crear_Window", "<html><head/><body><p><span style=\" "
-                                                         "color:#ffffff;\">Nombre:</span></p></body></html>"))
-        self.lbl_dic.setText(_translate("Crear_Window", "<html><head/><body><p><span style=\" "
-                                                        "color:#ffffff;\">Dirección:</span></p></body></html>"))
-        self.lbl_phone.setText(_translate("Crear_Window", "<html><head/><body><p><span style=\" "
-                                                          "color:#ffffff;\">Telefono:</span></p></body></html>"))
-        self.lbl_dpi.setText(_translate("Crear_Window", "<html><head/><body><p><span style=\" "
-                                                        "color:#ffffff;\">Dpi:</span></p></body></html>"))
-        self.lbl_nit.setText(_translate("Crear_Window", "<html><head/><body><p><span style=\" "
-                                                        "color:#ffffff;\">Nit:</span></p></body></html>"))
-        self.lbl_archivos.setText(_translate("Crear_Window", "<html><head/><body><p><span style=\" "
-                                                             "color:#ffffff;\">Archivos:</span></p></body></html>"))
-        self.lbl_ref.setText(_translate("Crear_Window", "<html><head/><body><p><span style=\" "
-                                                        "color:#ffffff;\">Referencia:</span></p></body></html>"))
+        self.lbl_name.setText(_translate("Crear_Window", "<html><head/><body><p><span style=\""
+                                                         " color:#ffffff;\">Nombre:</span></p></body></html>"))
+        self.lbl_dic.setText(_translate("Crear_Window", "<html><head/><body><p><span style=\""
+                                                        " color:#ffffff;\">Dirección:</span></p></body></html>"))
+        self.lbl_phone.setText(_translate("Crear_Window", "<html><head/><body><p><span style=\""
+                                                          " color:#ffffff;\">Telefono:</span></p></body></html>"))
+        self.lbl_dpi.setText(_translate("Crear_Window", "<html><head/><body><p><span style=\""
+                                                        " color:#ffffff;\">Dpi:</span></p></body></html>"))
+        self.lbl_nit.setText(_translate("Crear_Window", "<html><head/><body><p><span style=\""
+                                                        " color:#ffffff;\">Nit:</span></p></body></html>"))
+        self.lbl_archivos.setText(_translate("Crear_Window", "<html><head/><body><p><span style=\""
+                                                             " color:#ffffff;\">Archivos:</span></p></body></html>"))
+        self.lbl_ref.setText(_translate("Crear_Window", "<html><head/><body><p><span style=\""
+                                                        " color:#ffffff;\">Referencia:</span></p></body></html>"))
         self.btn_crear.setText(_translate("Crear_Window", "Crear"))
         self.btn_editar.setText(_translate("Crear_Window", "Editar"))
         self.btn_actua.setText(_translate("Crear_Window", "Actualizar"))
         self.btn_crear_4.setText(_translate("Crear_Window", "Eliminar"))
+        self.lnx_celda_eliminar.setPlaceholderText(_translate("Crear_Window", "Celda eliminar"))
 
     def guardar(self):
         df = pd.read_csv('asociados.csv')
@@ -240,23 +247,21 @@ class Ui_Crear_Window(object):
             for j in range(len(df.columns)):
                 self.tableWidget.setItem(i, j, QtWidgets.QTableWidgetItem(str(df.iat[i, j])))
 
-    def actualizar(self):  # ---- Actualizar no funciona
-        # ----- EL de eliminar no agarra el dato
-        self.guardar()
-        self.eliminar()
+        return df['Codigo']
+
+    def actualizar(self):
+        df = pd.read_csv('asociados.csv')
+        df.head()
+        df.to_csv('asociados.csv')
+        self.tableWidget.setColumnCount(len(df.columns))
+        self.tableWidget.setRowCount(len(df))
+        self.tableWidget.setHorizontalHeaderLabels(df.columns)
 
     def eliminar(self):
-        df = pd.read_csv('registros.csv')
-        filas = len(df.index)
+        df = pd.read_csv('asociados.csv')
+        filas = int(self.lnx_celda_eliminar.text())
         df.drop(df.index[[filas - 1]], inplace=True)
-        df.to_csv('registros.csv')
-
-    # def eliminar_celda(self):
-    #    df = pd.read_csv('registros.csv')
-    #    fila = self.txt_eliminar_celda.text()
-    #    filas = len(df.index)
-    #    df.drop(df.index[[filas - 1]], inplace=True)
-    #    df.to_csv('registros.csv')
+        df.to_csv('asociados.csv')
 
     def abrir(self):
         self.borrar = QtWidgets.QMainWindow()
@@ -266,4 +271,3 @@ class Ui_Crear_Window(object):
 
     def cerrar(self):
         sys.exit(0)
-
