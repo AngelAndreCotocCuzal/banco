@@ -9,9 +9,19 @@ class Asociado(Generic[T]):
         self._head = None
         self._tail = None
         self._size = 0
+
+    @property
+    def correo(self):
+        return self.correo
+
+    @property
+    def password(self):
+        return self.password
+
     # Lista Vacia
     def is_empty(self) -> bool:
         return self._head is None and self._tail is None
+
     # Se agregarn cuentas, PENDIENTE REVISAR SI ESTA YA UTILIZADO EL CORREO
     def crear_cuenta(self, correo: str, password: str, codigo: int, puesto: str, nombre: str):
         new = Node(correo, password, puesto, codigo, nombre, True)
@@ -30,44 +40,73 @@ class Asociado(Generic[T]):
         self._size += 1
         return new
 
-    def cambiar_password(self, codigo: int, new_password: str):
+    def cambiar_password(self, correo: str, new_password: str):
         aux = self._head
 
         while aux is not None:
-            if aux.codigo is codigo:
+            if aux.correo is correo:
                 aux.password = new_password
                 return f"La contraseña ha sido actualizada"
+
             else:
                 aux = aux.next
 
-        raise Exception('El numero de usuario no se encontró')
+        raise Exception('El correo no se encontró')
 
-    def deshabilitar(self, codigo: int):
+    def cambiar_nombre(self, correo: str, new_name: str):
         aux = self._head
 
         while aux is not None:
-            if aux.codigo is codigo:
-                aux.estado = False
-                return f"El usuario: {aux.nombre} - {aux.codigo} ha sido deshabilitado"
+            if aux.correo is correo:
+                aux.nombre = new_name
+                return f"El nombre fue actualizado"
+
             else:
                 aux = aux.next
 
-        raise Exception('El numero de usuario no se encontró')
+        raise Exception('El correo no se encontró')
 
-    def actualizar(self, codigo: int):
-        pass
-    def search(self, codigo: int) -> Node:
+    def deshabilitar(self, correo: str):
+        aux = self._head
+
+        while aux is not None:
+            if aux.correo is correo:
+                aux.estado = False
+                return f"El usuario: {aux.nombre} - {aux.correo} ha sido deshabilitado"
+
+            else:
+                aux = aux.next
+
+        raise Exception('El correo no se encontró')
+
+    def search_correo(self, correo: str) -> Node:
         aux = self._head
 
         while aux is not self._tail:
-            if aux.codigo == codigo:
+            if aux.correo == correo:
                 return aux
 
             else:
                 aux = aux.next
 
         if aux is self._tail:
-            return aux
+            return aux.correo
+
+        else:
+            raise Exception('No item found')
+
+    def search_contra(self, password: str) -> Node:
+        aux = self._head
+
+        while aux is not self._tail:
+            if aux.password == password:
+                return aux
+
+            else:
+                aux = aux.next
+
+        if aux is self._tail:
+            return aux.password
 
         else:
             raise Exception('No item found')
@@ -78,8 +117,8 @@ class Asociado(Generic[T]):
         aux = self._head
 
         while aux is not self._tail:
-            output += "Nombre:" + str(aux.nombre) + " Codigo: " + str(aux.codigo) + ' -> '
+            output += "" + str(aux.nombre) + " Codigo: " + str(aux.codigo) + " Contra: " + str(aux.password) + ' -> '
             aux = aux.next
 
-        output += "Nombre: " + str(self._tail.nombre) + " Codigo: " + str(aux.codigo)
+        output += "Nombre: " + str(self._tail.nombre) + " Codigo: " + str(aux.codigo) + str(aux.password)
         return output
