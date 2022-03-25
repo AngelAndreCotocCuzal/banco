@@ -54,7 +54,7 @@ class Ui_MainWindow(object):
         self.email.setObjectName("email")
         self.contrasenia = QtWidgets.QLineEdit(self.centralwidget)
         self.contrasenia.setGeometry(QtCore.QRect(80, 290, 341, 41))
-        self.contrasenia.setText("")
+        self.contrasenia.setEchoMode(QtWidgets.QLineEdit.Password)
         self.contrasenia.setAlignment(QtCore.Qt.AlignCenter)
         self.contrasenia.setObjectName("contrasenia")
         self.label_3 = QtWidgets.QLabel(self.centralwidget)

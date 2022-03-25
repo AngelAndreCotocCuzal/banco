@@ -36,7 +36,7 @@ class Ui_segunda(object):
         self.email_crear.setObjectName("email_crear")
         self.contrasenia_crear = QtWidgets.QLineEdit(self.centralwidget)
         self.contrasenia_crear.setGeometry(QtCore.QRect(70, 210, 341, 41))
-        self.contrasenia_crear.setText("")
+        self.contrasenia_crear.setEchoMode(QtWidgets.QLineEdit.Password)
         self.contrasenia_crear.setAlignment(QtCore.Qt.AlignCenter)
         self.contrasenia_crear.setObjectName("contrasenia_crear")
         self.Nombre_crear = QtWidgets.QLineEdit(self.centralwidget)
@@ -98,6 +98,7 @@ class Ui_segunda(object):
 
         if self.puesto == "Gerente" and self.codigo_gerente == "1202":
             d.crear_cuenta(self.correo, self.contrasena, self.codigo, self.puesto, self.nombre)
+            print("Se ha guardado")
         elif self.puesto == "Empleado" and self.codigo_gerente == "1234":
             d.crear_cuenta(self.correo, self.contrasena, self.codigo, self.puesto, self.nombre)
             print("Se ha guardado")
