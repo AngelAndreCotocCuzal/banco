@@ -6,6 +6,7 @@ from planos_ventana_mostrar_2 import Ui_Form_planos
 from fondo_imagen import Ui_Form_imagen
 from fondo_imagen_1 import Ui_Form_img
 from solicitar_final import Ui_Form_aprobar_fin
+from planes_imagen_2 import Ui_Form_imagen
 from imagenes import imagenes
 
 
@@ -68,7 +69,7 @@ class Ui_MainWindow_prestamo(object):
 
     def sol_planes(self):
         self.ventana = QtWidgets.QMainWindow()
-        self.ui = Ui_Form_img()
+        self.ui = Ui_Form_imagen()
         self.ui.setupUi(self.ventana)
         self.ventana.show()
 

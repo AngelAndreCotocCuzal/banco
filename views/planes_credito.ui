@@ -6,55 +6,16 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>773</width>
-    <height>597</height>
+    <width>1662</width>
+    <height>1458</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QLabel" name="label">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>20</y>
-     <width>751</width>
-     <height>541</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">image: url(:/imagenes/planes_fin.png);</string>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_2">
-   <property name="geometry">
-    <rect>
-     <x>530</x>
-     <y>410</y>
-     <width>55</width>
-     <height>16</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_3">
-   <property name="geometry">
-    <rect>
-     <x>450</x>
-     <y>530</y>
-     <width>251</width>
-     <height>21</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#ffffff;&quot;&gt;Cochito Seguro:Angel, Abdo, Gerardo&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-   </property>
-  </widget>
+  <property name="styleSheet">
+   <string notr="true">image: url(:/imagenes/planes_fin.png);</string>
+  </property>
  </widget>
  <resources>
   <include location="../imagenes/imagenes.qrc"/>
