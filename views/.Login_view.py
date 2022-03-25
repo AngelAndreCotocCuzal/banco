@@ -1,7 +1,7 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from segunda import Ui_segunda
 from principal import Ui_MainWindow_principal
-from segunda import Ui_segunda
+from segunda import Ui_segunda, d
 
 # d = Ui_segunda()
 
@@ -107,11 +107,8 @@ class Ui_MainWindow(object):
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
         # probar = self.email.text()
         # contra = self.contrasenia.text()
-        # if d.correo == probar and d.contrasena == contra:
-        self.Login_button.clicked.connect(self.abrir)
-        #else:
-        #    print('no hay')
 
+        self.Login_button.clicked.connect(self.abrir)
         self.Create_Account_Button.clicked.connect(self.crear)
 
     def retranslateUi(self, MainWindow):
@@ -126,10 +123,16 @@ class Ui_MainWindow(object):
         self.label_3.setText(_translate("MainWindow", "Designed By: Angel Cotoc, Diego Abdo, Gerardo Ortiz"))
 
     def abrir(self):
-        self.ventana = QtWidgets.QMainWindow()
-        self.ui = Ui_MainWindow_principal()
-        self.ui.setupUi(self.ventana)
-        self.ventana.show()
+        if self.email.text() == d.search_correo(self.email.text()) and self.contrasenia.text() == \
+                d.search_contra(self.contrasenia.text()):
+            self.ventana = QtWidgets.QMainWindow()
+            self.ui = Ui_MainWindow_principal()
+            self.ui.setupUi(self.ventana)
+            self.ventana.show()
+        else:
+            print("No coincide")
+            print(self.email.text())
+            print(d.search_correo(self.email.text()))
 
     def crear(self):
         self.ventana = QtWidgets.QMainWindow()

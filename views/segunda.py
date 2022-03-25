@@ -94,6 +94,13 @@ class Ui_segunda(object):
         self.puesto = self.Puesto.currentText()
         # self.codigo = self.Codigo_Gerente.text()
         self.codigo = randint(1000, 9999)
+        self.codigo_gerente = self.Codigo_Gerente.text()
 
-        d.crear_cuenta(self.correo, self.contrasena, self.codigo, self.puesto, self.nombre)
+        if self.puesto == "Gerente" and self.codigo_gerente == "1202":
+            d.crear_cuenta(self.correo, self.contrasena, self.codigo, self.puesto, self.nombre)
+        elif self.puesto == "Empleado" and self.codigo_gerente == "1234":
+            d.crear_cuenta(self.correo, self.contrasena, self.codigo, self.puesto, self.nombre)
+            print("Se ha guardado")
+        else:
+            print("Ingrese un codigo correcto")
 

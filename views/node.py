@@ -14,3 +14,5 @@ class Node:
         self.estado: bool = estado
         self.next: Optional[Node] = None
 
+    def __str__(self):
+        return f"{self.correo}"
