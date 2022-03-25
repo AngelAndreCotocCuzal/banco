@@ -5,46 +5,6 @@ import json
 
 
 class Ui_Form_solicitar(object):
-    SCHEMA = {
-        'code_prestamo': {
-            'required': True,
-            'type': 'string',
-            'minlength': 1,
-            'maxlength': 8
-        },
-        'code_asociado': {
-            'required': True,
-            'type': 'string',
-            'minlength': 1,
-            'maxlength': 8
-        },
-        'monto_solicitado': {
-            'required': True,
-            'type': 'string',
-        },
-        'monto_aprobado': {
-            'type': 'string'
-        },
-        'numero_cuotas': {
-            'type': 'integer',
-            'minlength': 1,
-            'maxlength': 50
-        },
-        'ingreso_mensual': {
-            'required': True,
-            'type': 'string',
-        },
-        'garantia': {
-            'required': True,
-            'type': 'string'
-        },
-        'plan_pagos': {
-            'type': 'string'
-        },
-        'estado_prestamo': {
-            'type': 'string'
-        }
-    }
     def setupUi(self, Form):
         Form.setObjectName("Form")
         Form.resize(979, 657)
@@ -131,10 +91,10 @@ class Ui_Form_solicitar(object):
         self.lnx_monto.setPlaceholderText(_translate("Form", "Monto"))
         self.label_3.setText(_translate("Form", "<html><head/><body><p><span style=\" color:#ffffff;\""
                                                 ">Numero de cuotas:</span></p><p><br/></p></body></html>"))
-        self.lnx_cuotas.setItemText(0, _translate("Form", "3 meses"))
-        self.lnx_cuotas.setItemText(1, _translate("Form", "6 meses"))
-        self.lnx_cuotas.setItemText(2, _translate("Form", "12 meses"))
-        self.lnx_cuotas.setItemText(3, _translate("Form", "24 meses"))
+        self.lnx_cuotas.setItemText(0, _translate("Form", "3"))
+        self.lnx_cuotas.setItemText(1, _translate("Form", "6"))
+        self.lnx_cuotas.setItemText(2, _translate("Form", "12"))
+        self.lnx_cuotas.setItemText(3, _translate("Form", "24"))
         self.label_4.setText(_translate("Form", "<html><head/><body><p><span style=\" color:#ffffff;\""
                                                 ">Ingresos mensuales:</span></p><p><br/></p></body></html>"))
         self.lnx_ingresos.setPlaceholderText(_translate("Form", "Ingresos"))
@@ -147,8 +107,6 @@ class Ui_Form_solicitar(object):
         self.btn_solicitar.setText(_translate("Form", "Solicitar Prestamo"))
 
     def guardar(self):
-
-
         self.monto = self.lnx_monto.text()
         self.cuotas = self.lnx_cuotas.currentText()
         self.ingresos = self.lnx_ingresos.text()

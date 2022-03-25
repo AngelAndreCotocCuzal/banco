@@ -1,4 +1,10 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
+from user import Asociado
+from typing import TypeVar
+from random import randint
+
+T = TypeVar('T')
+d: Asociado[T] = Asociado()
 
 
 class Ui_segunda(object):
@@ -9,7 +15,9 @@ class Ui_segunda(object):
         self.centralwidget.setObjectName("centralwidget")
         self.label_4 = QtWidgets.QLabel(self.centralwidget)
         self.label_4.setGeometry(QtCore.QRect(0, 0, 491, 691))
-        self.label_4.setStyleSheet("background-color: qlineargradient(spread:pad, x1:0.512, y1:0, x2:0.532, y2:1, stop:0.174129 rgba(17, 37, 232, 255), stop:1 rgba(255, 255, 255, 255));")
+        self.label_4.setStyleSheet("background-color: qlineargradient(spread:pad, "
+                                   "x1:0.512, y1:0, x2:0.532, y2:1, stop:0.174129 rgba(17, 37, 232, 255), "
+                                   "stop:1 rgba(255, 255, 255, 255));")
         self.label_4.setText("")
         self.label_4.setObjectName("label_4")
         self.label = QtWidgets.QLabel(self.centralwidget)
@@ -63,6 +71,8 @@ class Ui_segunda(object):
 
         self.retranslateUi(segunda)
         QtCore.QMetaObject.connectSlotsByName(segunda)
+        self.Create_Account_Button_2.clicked.connect(self.guardar)
+        # self.Create_Account_Button_2.quit()
 
     def retranslateUi(self, segunda):
         _translate = QtCore.QCoreApplication.translate
@@ -77,12 +87,13 @@ class Ui_segunda(object):
         self.Codigo_Gerente.setPlaceholderText(_translate("segunda", "Codigo Gerente (Si es Empleado Codigo: 1234)"))
         self.Create_Account_Button_2.setText(_translate("segunda", "Crear cuenta"))
 
+    def guardar(self):
+        self.correo = self.email_crear.text()
+        self.contrasena = self.contrasenia_crear.text()
+        self.nombre = self.Nombre_crear.text()
+        self.puesto = self.Puesto.currentText()
+        # self.codigo = self.Codigo_Gerente.text()
+        self.codigo = randint(1000, 9999)
 
-if __name__ == "__main__":
-    import sys
-    app = QtWidgets.QApplication(sys.argv)
-    segunda = QtWidgets.QMainWindow()
-    ui = Ui_segunda()
-    ui.setupUi(segunda)
-    segunda.show()
-    sys.exit(app.exec_())
+        d.crear_cuenta(self.correo, self.contrasena, self.codigo, self.puesto, self.nombre)
+

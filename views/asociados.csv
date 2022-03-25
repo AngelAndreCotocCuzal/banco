@@ -1,3 +1,4 @@
-,Codigo,Nombre,Direccion,Telefono,Dpi,Nit,Facturas,Referencas
-0,3463,Angel,,,,,Luz,
-1,3619,Angel,,,,,Luz,
+,Unnamed: 0.1,Unnamed: 0,Codigo,Nombre,Direccion,Telefono,Dpi,Nit,Facturas,Referencas
+0,0,0,3463,Angel,,,,,Luz,
+1,1,1,3619,Angel,,,,,Luz,
+2,3,3,5463,,,,,,Luz,

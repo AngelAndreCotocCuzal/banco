@@ -1,6 +1,9 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from segunda import Ui_segunda
 from principal import Ui_MainWindow_principal
+from segunda import Ui_segunda
+
+# d = Ui_segunda()
 
 
 class Ui_MainWindow(object):
@@ -102,7 +105,13 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
+        # probar = self.email.text()
+        # contra = self.contrasenia.text()
+        # if d.correo == probar and d.contrasena == contra:
         self.Login_button.clicked.connect(self.abrir)
+        #else:
+        #    print('no hay')
+
         self.Create_Account_Button.clicked.connect(self.crear)
 
     def retranslateUi(self, MainWindow):
@@ -127,6 +136,12 @@ class Ui_MainWindow(object):
         self.ui = Ui_segunda()
         self.ui.setupUi(self.ventana)
         self.ventana.show()
+
+    # def probar(self):
+    #    probar = self.email.text()
+    #    contra = self.contrasenia.text()
+    #    if d.correo == probar and d.contrasena == contra:
+    #        pass
 
 
 if __name__ == "__main__":

@@ -1,5 +1,11 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from solicitar_ventana import Ui_Form_solicitar
+from aprobar_ventana import Ui_Form
+# from planos_ventana import Ui_Form_planos
+from planos_ventana_mostrar_2 import Ui_Form_planos
+from fondo_imagen import Ui_Form_imagen
+from fondo_imagen_1 import Ui_Form_img
+from solicitar_final import Ui_Form_aprobar_fin
 from imagenes import imagenes
 
 
@@ -47,6 +53,8 @@ class Ui_MainWindow_prestamo(object):
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
         self.btn_solicitar.clicked.connect(self.sol_view)
+        self.btn_aprobar.clicked.connect(self.sol_aprobar)
+        self.btn_planes.clicked.connect(self.sol_planes)
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
@@ -62,7 +70,19 @@ class Ui_MainWindow_prestamo(object):
 
     def sol_view(self):
         self.ventana = QtWidgets.QMainWindow()
-        self.ui = Ui_Form_solicitar()
+        self.ui = Ui_Form_aprobar_fin()
+        self.ui.setupUi(self.ventana)
+        self.ventana.show()
+
+    def sol_aprobar(self):
+        self.ventana = QtWidgets.QMainWindow()
+        self.ui = Ui_Form()
+        self.ui.setupUi(self.ventana)
+        self.ventana.show()
+
+    def sol_planes(self):
+        self.ventana = QtWidgets.QMainWindow()
+        self.ui = Ui_Form_img()
         self.ui.setupUi(self.ventana)
         self.ventana.show()
 

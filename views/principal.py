@@ -2,6 +2,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets, uic
 from imagenes import imagenes
 from crear import Ui_Crear_Window
 from prestamo_bancarios_ventana import Ui_MainWindow_prestamo
+from planos_ventana import Ui_Form_planos
 
 
 class Ui_MainWindow_principal(object):
@@ -74,6 +75,8 @@ class Ui_MainWindow_principal(object):
         self.ui = Ui_MainWindow_prestamo()
         self.ui.setupUi(self.ventana)
         self.ventana.show()
+
+
 
     def cerrar(self):
         sys.exit(0)

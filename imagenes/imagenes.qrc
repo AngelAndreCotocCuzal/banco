@@ -1,8 +1,12 @@
 <RCC>
   <qresource prefix="prefijoNuevo">
+    <file>planes_fin.png</file>
+    <file>planes.png</file>
     <file>fondo_proyecto.png</file>
   </qresource>
   <qresource prefix="imagenes">
+    <file>planes_fin_yaaa.png</file>
+    <file>planes_fin.png</file>
     <file>fondo_proyecto.png</file>
   </qresource>
 </RCC>
