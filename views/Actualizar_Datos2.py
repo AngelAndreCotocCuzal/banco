@@ -2,7 +2,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 from segunda import d
 
 
-class Ui_actualizar(object):
+class Ui_actualizar_dos(object):
     def setupUi(self, actualizar):
         actualizar.setObjectName("actualizar")
         actualizar.resize(376, 547)

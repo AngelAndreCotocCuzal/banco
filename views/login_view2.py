@@ -2,7 +2,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 from segunda import Ui_segunda
 from principal import Ui_MainWindow_principal
 from segunda import Ui_segunda
-from Actualizar_Datos2 import Ui_actualizar
+from Actualizar_Datos2 import Ui_actualizar_dos
 from segunda import d
 
 class Ui_MainWindow(object):
@@ -112,14 +112,11 @@ class Ui_MainWindow(object):
         # probar = self.email.text()
         # contra = self.contrasenia.text()
         # if d.correo == probar and d.contrasena == contra:
-        if self.email.text() == d.search_correo(self.email.text()):
-            self.Login_button.clicked.connect(self.abrir)
-        else:
-            print("No hay")
 
+        self.Login_button.clicked.connect(self.abrir)
 
         self.Create_Account_Button.clicked.connect(self.crear)
-        self.Actualizar_Datos_Button.clicked.connect(self.abrir1)
+        self.Actualizar_Datos_Button.clicked.connect(self.abrir_actualizar)
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
@@ -139,9 +136,9 @@ class Ui_MainWindow(object):
         self.ui.setupUi(self.ventana)
         self.ventana.show()
 
-    def abrir1(self):
+    def abrir_actualizar(self):
         self.ventana = QtWidgets.QMainWindow()
-        self.ui = Ui_actualizar()
+        self.ui = Ui_actualizar_dos()
         self.ui.setupUi(self.ventana)
         self.ventana.show()
 
@@ -156,6 +153,7 @@ class Ui_MainWindow(object):
     #    contra = self.contrasenia.text()
     #    if d.correo == probar and d.contrasena == contra:
     #        pass
+
 
 if __name__ == "__main__":
     import sys

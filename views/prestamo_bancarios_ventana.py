@@ -31,20 +31,11 @@ class Ui_MainWindow_prestamo(object):
         self.label_2.setFont(font)
         self.label_2.setObjectName("label_2")
         self.btn_solicitar = QtWidgets.QPushButton(self.centralwidget)
-        self.btn_solicitar.setGeometry(QtCore.QRect(180, 220, 141, 61))
+        self.btn_solicitar.setGeometry(QtCore.QRect(400, 210, 141, 61))
         self.btn_solicitar.setObjectName("btn_solicitar")
         self.btn_planes = QtWidgets.QPushButton(self.centralwidget)
-        self.btn_planes.setGeometry(QtCore.QRect(400, 220, 131, 61))
+        self.btn_planes.setGeometry(QtCore.QRect(400, 370, 131, 61))
         self.btn_planes.setObjectName("btn_planes")
-        self.btn_aprobar = QtWidgets.QPushButton(self.centralwidget)
-        self.btn_aprobar.setGeometry(QtCore.QRect(610, 220, 141, 61))
-        self.btn_aprobar.setObjectName("btn_aprobar")
-        self.btn_visualizar = QtWidgets.QPushButton(self.centralwidget)
-        self.btn_visualizar.setGeometry(QtCore.QRect(290, 330, 131, 61))
-        self.btn_visualizar.setObjectName("btn_visualizar")
-        self.btn_pagos = QtWidgets.QPushButton(self.centralwidget)
-        self.btn_pagos.setGeometry(QtCore.QRect(500, 330, 131, 61))
-        self.btn_pagos.setObjectName("btn_pagos")
         MainWindow.setCentralWidget(self.centralwidget)
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
         self.statusbar.setObjectName("statusbar")
@@ -53,20 +44,15 @@ class Ui_MainWindow_prestamo(object):
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
         self.btn_solicitar.clicked.connect(self.sol_view)
-        self.btn_aprobar.clicked.connect(self.sol_aprobar)
         self.btn_planes.clicked.connect(self.sol_planes)
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
-        self.label_2.setText(_translate("MainWindow", "<html><head/><body><p><span style=\""
-                                                      " font-size:16pt; color:#ffffff;\""
-                                                      ">Prestamos Bancarios</span></p></body></html>"))
+        self.label_2.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:16pt; "
+                                                      "color:#ffffff;\">Prestamos Bancarios</span></p></body></html>"))
         self.btn_solicitar.setText(_translate("MainWindow", "Solicitar"))
         self.btn_planes.setText(_translate("MainWindow", "Planes"))
-        self.btn_aprobar.setText(_translate("MainWindow", "Aprobar"))
-        self.btn_visualizar.setText(_translate("MainWindow", "Visualizar"))
-        self.btn_pagos.setText(_translate("MainWindow", "Pagos"))
 
     def sol_view(self):
         self.ventana = QtWidgets.QMainWindow()

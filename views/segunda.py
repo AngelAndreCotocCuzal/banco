@@ -5,6 +5,7 @@ from random import randint
 
 T = TypeVar('T')
 d: Asociado[T] = Asociado()
+d.crear_cuenta('admin', 'admin123', 1234, 'Empleado',  'Angel Andre Cotoc Cuzal')
 
 
 class Ui_segunda(object):
